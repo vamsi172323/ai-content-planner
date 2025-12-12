@@ -183,13 +183,14 @@ def kickoff_crew():
     
     try:
         # 3.2 Kick off the multi-agent workflow
-        result = content_crew.kickoff(inputs=inputs)
+        crew_output = content_crew.kickoff(inputs=inputs)
+        final_result_string = crew_output.raw
         
         # 3.3 Return the final result
         return jsonify({
             "status": "success",
             "topic": topic,
-            "result": result
+            "result": final_result_string
         })
     
     except Exception as e:
