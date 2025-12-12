@@ -55,7 +55,7 @@ class GoogleSearchGroundingTool(BaseTool):
         client = genai.Client(http_options=HttpOptions(api_version="v1"))
             
         response = client.models.generate_content(
-            model=f"{MODEL_NAME}",
+            model="gemini-2.5-flash",
             contents=f"Ground your answer using Google Search to find the latest information for: '{query}', and then provide a comprehensive, bulleted answer.",
             config=GenerateContentConfig(
                 tools=[
@@ -75,7 +75,7 @@ google_search_tool = GoogleSearchGroundingTool()
 # --- 2. Define the LLM for the Crew ---
 # We use CrewAI's custom LLM class to configure the Vertex AI integration cleanly
 gemini_llm = LLM(
-    model=f"vertex_ai/{MODEL_NAME}",
+    model="gemini-2.5-flash",
     vertex_project=PROJECT_ID,
     vertex_location=REGION,
     temperature=0.3, # Lower temperature for factual content planning
