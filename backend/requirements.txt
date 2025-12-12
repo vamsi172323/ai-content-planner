@@ -1,0 +1,17 @@
+# requirements.txt
+# Core CrewAI and Pydantic dependencies
+crewai
+pydantic
+
+# Vertex AI/Gemini SDKs (Ensure these match your working versions)
+google-cloud-aiplatform
+# Add the unified SDK dependency if your final fix required it:
+# google-genai 
+
+# Fallback/Wrapper (If you installed it)
+litellm
+
+# Web Server Components
+Flask
+gunicorn
+python-dotenv
