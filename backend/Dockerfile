@@ -24,4 +24,4 @@ EXPOSE 8080
 
 # The CMD defines the command to run the application using Gunicorn (a production WSGI server)
 # The format is: gunicorn -b :$PORT <app_file>:<app_instance>
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+CMD ["gunicorn", "--time-out", "0", "--bind", "0.0.0.0:8080", "app:app"]
