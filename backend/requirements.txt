@@ -10,8 +10,13 @@ google-cloud-aiplatform
 
 # Fallback/Wrapper (If you installed it)
 litellm
+litellm[proxy]
 
 # Web Server Components
+# FastAPI and ASGI server (Required by LiteLLM proxy)
+fastapi
+uvicorn
+
 Flask
 gunicorn
 python-dotenv
