@@ -55,7 +55,7 @@ class GoogleSearchGroundingTool(BaseTool):
         client = genai.Client(http_options=HttpOptions(api_version="v1"))
             
         response = client.models.generate_content(
-            model=MODEL_NAME,
+            model=f"{MODEL_NAME}",
             contents=f"Ground your answer using Google Search to find the latest information for: '{query}', and then provide a comprehensive, bulleted answer.",
             config=GenerateContentConfig(
                 tools=[
